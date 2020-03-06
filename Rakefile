@@ -1,5 +1,4 @@
 require 'rake'
-require 'aws-sdk'
 
 desc "build AMI for rails"
 task :build do

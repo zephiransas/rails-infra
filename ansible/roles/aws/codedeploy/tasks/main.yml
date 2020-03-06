@@ -1,0 +1,5 @@
+- name: Check if codedeploy-agent dir exists
+  stat: path=/etc/codedeploy-agent
+  register: result
+- import_tasks: setup.yml
+  when: result.stat.exists == false

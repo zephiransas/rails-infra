@@ -12,4 +12,5 @@
     - { role: ruby }
     - { role: nginx }
     - { role: aws/logs }
+    - { role: aws/codedeploy }
 

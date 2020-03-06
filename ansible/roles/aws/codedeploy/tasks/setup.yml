@@ -1,0 +1,16 @@
+---
+
+- name: download codedeploy-agent installer
+  get_url: url=https://{{ codedeploy_bucket_name }}.s3.amazonaws.com/latest/install dest=/tmp mode=0744 validate_certs=no
+
+- name: Create symbolic link for workaround
+  file: 
+    src: /usr/bin/ruby
+    dest: /usr/bin/ruby2.5
+    state: link
+
+- name: Install CodeDeploy Agent
+  command: ruby /tmp/install auto
+
+- name: start codedeploy-agent service
+  service: name=codedeploy-agent state=started enabled=yes
