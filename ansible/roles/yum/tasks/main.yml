@@ -6,8 +6,10 @@
   yum:
     name: 
       - gcc
+      - gcc-c++
       - openssl-devel 
       - readline-devel 
       - zlib-devel
       - git
+      - ruby-devel
     state: present

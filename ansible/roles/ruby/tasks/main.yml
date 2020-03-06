@@ -1,3 +1,6 @@
 ---
 - name: install ruby 2.6
   shell: amazon-linux-extras install -y ruby2.6
+
+- name: install bundler
+  shell: gem install bundler
