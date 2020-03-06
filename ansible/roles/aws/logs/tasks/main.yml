@@ -1,0 +1,15 @@
+---
+- name: install awslogs
+  yum: name=awslogs state=latest disable_gpg_check=yes
+
+- name: copy conf files
+  template: src={{ item }}.j2 owner=root dest=/etc/awslogs/{{ item }}
+  with_items:
+    - awscli.conf
+    - awslogs.conf
+
+- name: create state directory
+  file: path=/var/awslogs/state owner=root state=directory
+
+- name: start and enable agent
+  service: name=awslogsd state=started enabled=yes

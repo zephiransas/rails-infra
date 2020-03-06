@@ -1,0 +1,13 @@
+---
+- name: update all packages
+  yum: name=* state=latest
+
+- name: Install packages
+  yum:
+    name: 
+      - gcc
+      - openssl-devel 
+      - readline-devel 
+      - zlib-devel
+      - git
+    state: present

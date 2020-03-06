@@ -1,0 +1,15 @@
+---
+- hosts: '{{ target_hosts }}'
+  become: yes
+  # vars_files:
+  #   - "vars/{{ stage }}-account.yml"
+  vars:
+    app_name: 'rails-app'
+    log_dir: '/var/log/{{ app_name }}'
+    log_file_path: '{{ log_dir }}/application.log'
+  roles:
+    - { role: yum }
+    - { role: ruby }
+    - { role: nginx }
+    - { role: aws/logs }
+
