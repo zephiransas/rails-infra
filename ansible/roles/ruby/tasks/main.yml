@@ -1,6 +1,7 @@
 ---
-- name: install ruby 2.6
-  shell: amazon-linux-extras install -y ruby2.6
+- name: install ruby 2.6.3
+  yum:
+    name: https://github.com/feedforce/ruby-rpm/releases/download/2.6.3/ruby-2.6.3-1.el7.centos.x86_64.rpm
 
 - name: install bundler
   shell: gem install bundler

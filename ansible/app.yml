@@ -10,7 +10,7 @@
   roles:
     - { role: yum }
     - { role: ruby }
-    - { role: nginx }
+    # - { role: nginx }
     - { role: aws/logs }
     - { role: aws/codedeploy }
 
